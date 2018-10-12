@@ -3,7 +3,15 @@ package com.company.superme198.Core;
 public class ThreeSplit {
 
 
-    
+    /**Link:https://app.codesignal.com/arcade/code-arcade/well-of-integration/QmK8kHTyKqh8xDoZk
+     * Example
+     For a = [0, -1, 0, -1, 0, -1], the output should be
+     threeSplit(a) = 4.
+     Here are all possible ways:
+     [0, -1] [0, -1] [0, -1]
+     [0, -1] [0, -1, 0] [-1]
+     [0, -1, 0] [-1, 0] [-1]
+     [0, -1, 0] [-1] [0, -1]*/
     static int threeSplit(int[] a) {
         int len = a.length;
         int[] prefixSum = new int[len+1];
