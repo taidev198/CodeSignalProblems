@@ -19,7 +19,7 @@ public class ClockHandAngle {
      * At this time, the minute and hour hands are perpendicular, which means the angle between them
      * could be measured as 90 or 270 degrees, so we return 90 since it's smaller.*/
     static double clockHandAngle(String time) {
-        double ans =0.0;
+        double ans ;
         int dot = time.indexOf(":");
         int h =  Integer.valueOf(time.substring(0,dot));
         int min = Integer.valueOf(time.substring(dot+1, time.lastIndexOf(":")));
@@ -36,7 +36,43 @@ public class ClockHandAngle {
 
 
     public static void main(String...args){
+        //System.out.println(clockHandAngle("12:16:21"));
+        int angle = 30, hour = 12, min = 54, sec = 17;
+        boolean increaseMin = true, increaseSec = false;
+            int h = hour;
+            int m = min;
+            double ang = clockHandAngle(h +":" +m +":" + sec);
+            while (ang != angle){
 
-        System.out.println(clockHandAngle("7:46:11"));
+                if (increaseMin)
+                    m++;
+                if (increaseSec)
+                    sec++;
+                if (sec == 60){
+                    sec =0;
+                    m++;
+                }
+                if (m == 60){
+                    m = 0;
+                    h++;
+                }
+                if (h == 13)
+                    h = 1;
+                if (ang == angle)
+                    break;
+                if (clockHandAngle(h +":" +m +":" + sec) > angle){
+                    if (increaseSec)
+                        break;
+                    m--;
+                    increaseMin = false;
+                    increaseSec = true;
+                }
+                if (ang >= angle)
+                    break;
+                ang = clockHandAngle(h +":" +m +":" + sec);
+
+            }
+        System.out.println(h +":" +m +":" + sec);
+        System.out.println(clockHandAngle("12:32:44"));
     }
 }
