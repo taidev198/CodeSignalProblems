@@ -30,14 +30,6 @@ public class NQueens {
 
     static void generateQueens(int n, boolean[][] visited,List<int[]>  ans,  List<List<int[]>> chosen, int row){
         if (row == n){
-            boolean ok = true;
-            for (int i = 0; i <n -1; i++) {
-                if (!isValid(ans.get(0)[0], ans.get(0)[1], ans.get(i+1)[0], ans.get(i+1)[1])){
-                    ok = false;
-                    break;
-                }
-            }
-            if (ok)
                 chosen.add(new ArrayList<>(ans));
         }
         else {
