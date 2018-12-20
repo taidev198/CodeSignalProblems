@@ -32,6 +32,7 @@ public class BankRequests {
     }
 
     public static void main(String...args){
+       // (2 (7 (2 () ()) (6 (5 () ()) (11 () ()))) (5 () (9 (4 () ()) ())))
         System.out.println(Arrays.toString(bankRequests(new int[]{10, 100, 20, 50, 30}, new String[]{"withdraw 2 10", "transfer 5 1 20",
                 "deposit 5 20", "transfer 3 4 15"})));
     }
