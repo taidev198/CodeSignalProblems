@@ -10,7 +10,7 @@ public class DigitDifferentSort {
         int len = a.length;
         int[] digit = new int[len];
         for(int i =0; i< len ;i ++)
-            digit[i]= digitDiffernce(a[i]);
+            digit[i]= digitDifference(a[i]);
         for(int i=0; i< len-1; i++){
             int min = digit[i];
             int minIdx = i;
@@ -33,7 +33,7 @@ public class DigitDifferentSort {
         }
         return a;
     }
-    static int digitDiffernce(int n){
+    static int digitDifference(int n){
         String[] digit  = Integer.toString(n).split("");
         int max = Integer.valueOf(digit[0]), min = Integer.valueOf(digit[0]);
         for(int i =1; i< digit.length; i++){

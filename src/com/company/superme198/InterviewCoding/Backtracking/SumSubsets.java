@@ -90,6 +90,52 @@ public class SumSubsets {
 
     }
 
+    static List<List<Integer>> combinationSum(int[] candidates, int target) {
+        int len = candidates.length;
+        boolean[] visited = new boolean[len];
+        List<List<Integer>> ans = new ArrayList<>();
+        List<List<Integer>> chosen  = new ArrayList<>();
+        findSubset1(candidates, target, visited, chosen, ans);
+        return ans;
+    }
+
+    static void findSubset1(int[] arr, int num, boolean[] visited,List<List<Integer>> chosen, List<List<Integer>> ans){
+        if(num ==0){
+            if (ans.size() ==0 )
+                ans.add(new ArrayList<>(chosen.get(0)));
+            else {
+               boolean ok = true;
+                if (ok)
+                    ans.add(new ArrayList<>(chosen.get(0)));
+            }
+
+
+        }else{
+            for(int i=0; i<arr.length; i++){
+//                if(num - arr[i]  >=0 && !visited[i]){
+//                    boolean ok = true;
+//                    for (int i =0 ) {
+//                        if (ints[1] >= i) {
+//                            ok = false;
+//                            break;
+//                        }
+//                    }
+//                    if (ok){
+//                        num -= arr[i];
+//                        visited[i] = true;
+//                        chosen.add(new int[]{arr[i], i});
+//                        findSubset(arr, num, visited, chosen, ans);
+//                        chosen.remove(chosen.size() -1);
+//                        visited[i]= false;
+//                        num += arr[i];
+//                    }
+//
+//                }
+            }
+        }
+
+    }
+
     public static void main(String...args){
         System.out.println(Arrays.deepToString(sumSubsets(new int[]{1, 2, 2, 3, 4, 5}, 5)));
         HashSet<int[]> set = new HashSet<>();
